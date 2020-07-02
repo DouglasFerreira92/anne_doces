@@ -1,0 +1,21 @@
+<h1>Venda Cadastrada</h1>
+<table class="table table-striped table-borderlles">
+
+	<thead class="thead-dark">
+
+		<th>ID venda</th><th>Cliente</th><th>Descricao</th><th>Quantia</th><th>Valor</th><th>Data Compra</th>
+
+	</thead>
+
+	<tbody>
+
+	{loop="$result"}	
+		<tr>
+			<td>{$value.idcompra}</td><td><strong>{if="isset($value.desnome)"}{$value.desnome}{/if}</strong></td><td>{$value.descricao}</td><td>{$value.desqtn}</td><td><strong>R$ {$value.desvalor}</strong></td><td>{$value.vdate}</td>
+		</tr>
+	{/loop}
+
+	</tbody>
+
+</table>
+</div>

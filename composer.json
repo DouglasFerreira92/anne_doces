@@ -1,0 +1,21 @@
+{
+    "name": "douglasferreira9292/composer",
+    "description": "''\u001b[DProjeto_suporte_tecnico",
+    "license": "dev",
+    "authors": [
+        {
+            "name": "DouglasFerreira92",
+            "email": "douglasferreira9292@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "slim/slim" : "3.9.2",
+        "rain/raintpl" : "3.1.1"
+    },
+    "autoload":{
+        "psr-4":{
+            "project\\" : "application/project"
+        }
+    }
+}

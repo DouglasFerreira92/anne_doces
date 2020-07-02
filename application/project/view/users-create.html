@@ -1,0 +1,73 @@
+  <script src="../public/admin/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    Lista de Usuários
+  </h1>
+  
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+  <div class="row">
+  	<div class="col-md-12">
+  		<div class="box box-success">
+        <div class="box-header with-border">
+          <h3 class="box-title">Novo Usuário</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+          <div class="box-body">
+            <div class="form-group">
+              <label for="deslogin">Login</label>
+              <input type="text" class="form-control" id="deslogin" name="deslogin" placeholder="Digite o login">
+            </div>
+            <div class="form-group">
+              <label for="despassword">Senha</label>
+              <input type="password" class="form-control" id="despassword" name="despassword" placeholder="Digite a senha">
+            </div>
+          </div>
+          <!-- /.box-body -->
+          <div class="box-footer">
+            <button type="submit" class="btn btn-success" id="btn_cads">Cadastrar</button>
+          </div>
+        
+      </div>
+  	</div>
+  </div>
+  <div id="dados">
+    
+  </div>
+</section>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+ 
+  $("#btn_cads").click(function(){
+    var login = $("#deslogin").val()
+    var senha = $("#despassword").val()
+    $.ajax({
+          url:"http://localhost/suport/admin/insert",
+          type:"POST",
+          dataType:"html",
+          data:{login,senha},
+          beforeSend:function(){
+            $("#dados").html("<span class='alert-success'>Carregando...</span>")
+          },
+          success:function(retorno){
+            $("#dados").html(retorno);
+          }
+    })
+  })
+
+});
+
+</script>
